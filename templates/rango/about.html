@@ -1,10 +1,11 @@
-<!DOCTYPE HTML>
+{% extends 'rango/base.html' %}
 {% load staticfiles %}
 
-<HTML>
-	<head> {{aboutmessage}} </head>
+{%  block title_block %}
+		<title>{{ aboutmessage }}</title>
+{% endblock %}
 
-	<body>
+{% block body_block %}
 		<div>
 			<img src = "{% static "images/about.png" %}" alt="Title Picture"/>
 			<p1>page!</p1>
@@ -13,10 +14,9 @@
 		<div>
 			<p1>{{catmessage}}</p1>
 		</div>
-			<img src = "{{ MEDIA_URL}}cat.jpg" alt="Pic of Cat"/>
+			<img src = "{{ MEDIA_URL }}cat.jpg" alt="Pic of Cat"/>
 	<br><hr>
 		<div>
 			<font size = 2>{{tutorialmessage}}<strong>{{name}}</strong></font>
 		</div>
-	</body>
-</HTML>
+{% endblock %}
